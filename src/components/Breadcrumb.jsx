@@ -42,10 +42,8 @@ const Breadcrumb = ({ routes }) => {
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
 
-    const handleClick = (event, crumb) => {
-      if (crumb.toc.length > 0) {
-        setAnchorEl(event.currentTarget);
-      }
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
     };
 
     const handleClose = () => {
@@ -58,8 +56,9 @@ const Breadcrumb = ({ routes }) => {
         {breadcrumbs.map((crumb, index) => {
           const isLast = index === breadcrumbs.length - 1;
           const hasChildren = crumb.toc.length > 0;
+          const isDeeperPath = path.length > crumb.path.length && path.startsWith(crumb.path);
 
-          if (hasChildren && !isLast) {
+          if (hasChildren && (!isLast || !isDeeperPath)) {
             return (
               <div key={crumb.path} style={{ display: "flex", alignItems: "center" }}>
                 <Link
@@ -72,7 +71,7 @@ const Breadcrumb = ({ routes }) => {
                 </Link>
                 <IconButton
                   size="small"
-                  onClick={(e) => handleClick(e, crumb)}
+                  onClick={handleClick}
                   aria-controls={open ? "child-menu" : undefined}
                   aria-haspopup="true"
                   aria-expanded={open ? "true" : undefined}
