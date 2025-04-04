@@ -7,7 +7,7 @@ on:
 permissions:
   contents: read  # Allows the workflow to read the repository contents
   packages: write # Allows the workflow to publish packages
-  
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -23,7 +23,7 @@ jobs:
       - run: |
           echo @angryart:https://npm.pkg.github.com/ > .npmrc
           echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> .npmrc
-      - run: npm publish
+      - run: npm publish --access public
         env:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
