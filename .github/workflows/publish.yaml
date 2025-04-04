@@ -24,7 +24,7 @@ jobs:
         # Set the registry for the @angryart scope to GitHub Packages
       - run: npm config set '//npm.pkg.github.com/:_authToken' "${{ secrets.GITHUB_TOKEN }}"
         # Authenticate with GitHub Packages using the GITHUB_TOKEN secret
-      - run: cat .npmrc
+      - run: ls -R
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
