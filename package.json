@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "main": "src/index.js",
-  "bin": { "arkitect": "./bin/arkitect.js" },
+  "bin": {
+    "arkitect": "bin/arkitect.js"
+  },
   "exports": {
     ".": "./index.js",
     "./SearchBar": "./src/components/SearchBar.jsx",
