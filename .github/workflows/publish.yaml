@@ -16,13 +16,12 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
-      - run: npm install
-      - run: |
-          echo @angryart:https://npm.pkg.github.com/ > .npmrc
-          echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> .npmrc
+          node-version: 20
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@angryart'
+      - run: npm ci
       - run: npm publish --access public
         env:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
