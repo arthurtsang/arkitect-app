@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "type": "module",
   "main": "src/index.js",
-  "bin": {
-    "arkitect": "bin/arkitect.js"
-  },
+  "bin": { "arkitect": "./bin/arkitect.js" },
   "exports": {
     ".": "./index.js",
     "./SearchBar": "./src/components/SearchBar.jsx",
     "./ThemeToggle": "./src/components/ThemeToggle.jsx",
-    "./Breadcrumb": "./src/components/Breadcrumb.jsx"
+    "./Breadcrumb": "./src/components/Breadcrumb.jsx",
+    "./JsonSchemaViewer": "./src/components/JsonSchemaViewer.jsx"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -20,7 +19,8 @@
     "@mui/material": "^5.15.14",
     "@mui/icons-material": "^5.15.14",
     "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0"
+    "@emotion/styled": "^11.14.0",
+    "@uiw/react-json-view": "^2.0.0" 
   },
   "dependencies": {},
   "devDependencies": {
@@ -31,9 +31,10 @@
     "@mui/material": "^5.15.14",
     "@mui/icons-material": "^5.15.14",
     "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0"
+    "@emotion/styled": "^11.14.0",
+    "@uiw/react-json-view": "^2.0.0" 
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com/"
   }
 }
