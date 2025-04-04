@@ -1,10 +1,37 @@
 {
   "name": "@angryart/arkitect-app",
   "version": "0.1.0",
-  "description": "Core utilities for Arkitect framework",
-  "main": "index.js",
   "type": "module",
-  "dependencies": {
-    "@vitejs/plugin-react": "^4.0.0"
+  "main": "src/index.js",
+  "bin": { "arkitect": "./bin/arkitect.js" },
+  "exports": {
+    ".": "./index.js",
+    "./SearchBar": "./src/components/SearchBar.jsx",
+    "./ThemeToggle": "./src/components/ThemeToggle.jsx",
+    "./Breadcrumb": "./src/components/Breadcrumb.jsx"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.4.1",
+    "gray-matter": "^4.0.3",
+    "@mui/material": "^5.15.14",
+    "@mui/icons-material": "^5.15.14",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.4.1",
+    "gray-matter": "^4.0.3",
+    "@mui/material": "^5.15.14",
+    "@mui/icons-material": "^5.15.14",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
