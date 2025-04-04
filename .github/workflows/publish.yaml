@@ -22,7 +22,7 @@ jobs:
       - run: npm ci
       - run: echo "@angryart:registry=https://npm.pkg.github.com" > ~/.npmrc
       - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
-      - run: ls -R
+      - run: ls -al
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
