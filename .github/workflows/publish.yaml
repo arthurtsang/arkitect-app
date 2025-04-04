@@ -3,6 +3,11 @@ on:
   release:
     types: [created]
   workflow_dispatch:
+
+permissions:
+  contents: read  # Allows the workflow to read the repository contents
+  packages: write # Allows the workflow to publish packages
+  
 jobs:
   publish:
     runs-on: ubuntu-latest
