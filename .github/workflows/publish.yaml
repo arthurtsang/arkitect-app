@@ -18,9 +18,9 @@ jobs:
         with:
           node-version: 20
           registry-url: 'https://npm.pkg.github.com'
-          scope: '@angryart'
+          scope: '@arthurtsang'
       - run: npm ci
-      - run: echo "@angryart:registry=https://npm.pkg.github.com" > .npmrc
+      - run: echo "@arthurtsang:registry=https://npm.pkg.github.com" > .npmrc
       - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
       - run: ls -al
       - run: npm publish --access public
